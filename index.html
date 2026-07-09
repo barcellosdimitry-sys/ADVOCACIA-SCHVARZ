@@ -5,105 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schvarz Advocacia e Soluções</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonte Google: Playfair Display (Luxo/Títulos) e Inter (Leitura) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-color: #0A192F; /* Azul escuro corporativo */
-            --accent-color: #25D366;  /* Verde WhatsApp para conversão */
-            --text-color: #333333;
-            --light-bg: #F8F9FA;
+            --primary-dark: #0B132B; /* Azul profundo */
+            --primary-light: #1C2541;
+            --gold: #D4AF37; /* Dourado Advocacia */
+            --text-gray: #4A4A4A;
             --white: #FFFFFF;
+            --bg-light: #F4F6F9;
+            --whatsapp: #25D366;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
 
         body {
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-gray);
             line-height: 1.6;
-            background-color: var(--white);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .text-center {
-            text-align: center;
-        }
-
-        .bg-light {
-            background-color: var(--light-bg);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: var(--primary-color);
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        h2, h3, h4 {
-            color: var(--primary-color);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: #1EBE55;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
+        /* CABEÇALHO */
         header {
-            padding: 20px 0;
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
+            background-color: var(--primary-dark);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .nav-bar {
@@ -112,258 +62,398 @@
             align-items: center;
         }
 
-        .nav-bar .logo {
-            font-size: 1.3rem;
+        .logo {
+            color: var(--gold);
+            font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--primary-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .nav-bar nav a {
+            color: var(--white);
+            text-decoration: none;
             margin: 0 15px;
-            font-weight: 500;
-            color: #555;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
         .nav-bar nav a:hover {
-            color: var(--primary-color);
+            color: var(--gold);
         }
 
+        /* BOTÃO WHATSAPP PULSANTE */
+        .btn-whats {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .btn-whats:hover {
+            background-color: #1EBE55;
+            transform: translateY(-2px);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--primary-dark);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #b5952f;
+            transform: scale(1.02);
+        }
+
+        /* HERO SECTION (COM IMAGEM DE FUNDO) */
         #hero {
-            padding: 120px 20px;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(10,25,47,0.02) 0%, rgba(255,255,255,1) 100%);
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.7)), 
+                        url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            color: var(--white);
+            padding-top: 60px;
         }
 
-        #hero p {
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content p {
             font-size: 1.2rem;
-            max-width: 750px;
-            margin: 0 auto 20px auto;
-            color: #555;
+            margin-bottom: 30px;
+            color: #d1d5db;
         }
 
+        /* SESSÃO DE CONFIANÇA (NÚMEROS) */
+        .trust-bar {
+            background-color: var(--gold);
+            padding: 40px 0;
+            color: var(--primary-dark);
+        }
+
+        .trust-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .trust-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .trust-item p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* ÁREAS DE ATUAÇÃO */
         #areas {
-            padding: 80px 0;
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+        }
+
+        .section-header p {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .cards {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            justify-content: space-between;
         }
 
         .card {
-            background-color: var(--white);
+            background: var(--white);
             padding: 40px 30px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            flex: 1;
-            transition: transform 0.3s ease;
-            border-top: 4px solid var(--primary-color);
+            transition: all 0.4s;
+            border-bottom: 4px solid transparent;
+            text-align: center;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
         }
 
         .card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
             margin-bottom: 15px;
-            font-size: 1.3rem;
         }
 
-        #diferenciais {
-            padding: 80px 0;
-        }
-
-        .features {
+        /* AUTORIDADE / SOBRE NÓS */
+        #sobre {
+            padding: 100px 0;
+            background-color: var(--white);
             display: flex;
-            gap: 40px;
-            justify-content: space-between;
+            align-items: center;
         }
 
-        .feature-item {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        .feature-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .sobre-img {
+            width: 100%;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop') center/cover;
+            border-radius: 10px;
+            box-shadow: -20px 20px 0px var(--gold);
         }
 
+        .sobre-texto h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ */
         #faq {
             padding: 80px 0;
+            background-color: var(--primary-dark);
+            color: var(--white);
         }
 
-        .accordion {
-            max-width: 800px;
-            margin: 0 auto;
+        #faq .section-header h2 {
+            color: var(--white);
         }
 
-        details {
-            background-color: var(--white);
+        .accordion details {
+            background-color: var(--primary-light);
             padding: 20px;
             margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid #eee;
+            border-left: 4px solid var(--gold);
         }
 
-        summary {
+        .accordion summary {
             font-weight: 600;
             font-size: 1.1rem;
-            color: var(--primary-color);
             outline: none;
         }
 
-        details p {
+        .accordion p {
             margin-top: 15px;
-            color: #555;
+            color: #b0b8c9;
         }
 
-        .cta-section {
-            background-color: var(--primary-color);
-            padding: 90px 0;
-            color: var(--white);
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 2.2rem;
-        }
-
-        .cta-section p {
-            margin-bottom: 30px;
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-
+        /* FOOTER */
         footer {
-            background-color: #050d1a;
-            color: #aaa;
-            padding: 40px 0;
-            font-size: 0.9rem;
+            background-color: #050a17;
+            color: #888;
+            padding: 50px 0 20px 0;
+            text-align: center;
         }
 
-        footer a {
-            color: #aaa;
-            text-decoration: underline;
+        footer h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
         }
 
+        footer .footer-info {
+            margin-bottom: 30px;
+        }
+
+        /* RESPONSIVO */
         @media (max-width: 768px) {
-            .nav-bar nav, .nav-bar .btn-outline {
-                display: none;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            .cards, .features {
-                flex-direction: column;
-                gap: 20px;
-            }
-            #hero {
-                padding: 80px 20px;
-            }
+            .nav-bar nav { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .sobre-grid { grid-template-columns: 1fr; }
+            .sobre-img { height: 350px; box-shadow: -10px 10px 0px var(--gold); }
+            #hero { text-align: center; padding-top: 100px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="container nav-bar">
-            <div class="logo">SCHVARZ ADVOCACIA</div>
+            <div class="logo">SCHVARZ</div>
             <nav>
                 <a href="#areas">Áreas de Atuação</a>
-                <a href="#diferenciais">Diferenciais</a>
-                <a href="#faq">FAQ</a>
+                <a href="#sobre">O Escritório</a>
+                <a href="#faq">Dúvidas</a>
             </nav>
-            <a href="#contato" class="btn-outline">Falar com Advogado</a>
+            <a href="https://wa.me/5500000000000" target="_blank" class="btn-whats">
+                <i class="fab fa-whatsapp"></i> Fale com um Especialista
+            </a>
         </div>
     </header>
 
-    <section id="hero" class="container">
-        <div class="hero-content">
-            <h1>Protegendo seus direitos e garantindo o seu futuro com soluções jurídicas ágeis.</h1>
-            <p>Atuação especializada em Direito Civil, Trabalhista e de Família. Atendimento personalizado, seguro e totalmente digital para a sua comodidade.</p>
-            <a href="https://wa.me/5500000000000" class="btn-primary" target="_blank">Agendar uma Consulta Online</a>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Seus direitos protegidos com <span>Estratégia e Agilidade.</span></h1>
+                <p>Atuação incisiva em Direito Civil, Trabalhista e de Família. Análise de risco rigorosa para entregar o melhor resultado para o seu caso.</p>
+                <a href="https://wa.me/5500000000000" class="btn-gold" target="_blank">Solicitar Análise do Meu Caso</a>
+            </div>
         </div>
     </section>
 
-    <section id="areas" class="bg-light">
+    <!-- Trust Bar (Prova Social) -->
+    <section class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <h3>+10</h3>
+                <p>Anos de Experiência</p>
+            </div>
+            <div class="trust-item">
+                <h3>98%</h3>
+                <p>De Satisfação</p>
+            </div>
+            <div class="trust-item">
+                <h3>Sigilo</h3>
+                <p>Absoluto e Ético</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section id="areas">
         <div class="container">
-            <h2 class="section-title">Nossas Especialidades</h2>
+            <div class="section-header">
+                <p>Nossas Especialidades</p>
+                <h2>Soluções Jurídicas Sob Medida</h2>
+            </div>
             <div class="cards">
                 <div class="card">
-                    <h3>⚖️ Família e Sucessões</h3>
-                    <p>Protegemos o seu patrimônio e as suas relações. Atuamos em Divórcios, Guarda de Filhos, Pensão, Inventários e Partilha de Bens.</p>
+                    <i class="fas fa-users"></i>
+                    <h3>Família e Sucessões</h3>
+                    <p>Atuação humanizada e firme em divórcios, partilha de bens, guarda, pensão alimentícia e planejamento sucessório (inventários).</p>
                 </div>
                 <div class="card">
-                    <h3>💼 Direito Trabalhista</h3>
-                    <p>Defesa integral do trabalhador. Especialistas em reversão de justa causa, rescisão indireta, horas extras e verbas rescisórias.</p>
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Direito Trabalhista</h3>
+                    <p>Defesa dos direitos do trabalhador frente a abusos corporativos. Reversão de justa causa, rescisão indireta, assédio e cálculos de verbas.</p>
                 </div>
                 <div class="card">
-                    <h3>📄 Civil e Contratos</h3>
-                    <p>Soluções seguras para o seu dia a dia. Ações de indenização, cobranças, contratos, direito do consumidor e regularização imobiliária.</p>
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Civil e Contratos</h3>
+                    <p>Segurança para o seu patrimônio. Resolução de conflitos contratuuais, ações indenizatórias, direito imobiliário e cobranças judiciais.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="diferenciais" class="container">
-        <h2 class="section-title">Por que escolher nosso escritório?</h2>
-        <div class="features">
-            <div class="feature-item">
-                <h4>💻 Atendimento Digital</h4>
-                <p>Atendemos você de onde estiver, com reuniões online seguras e envio de documentos 100% digital.</p>
-            </div>
-            <div class="feature-item">
-                <h4>⚡ Agilidade e Transparência</h4>
-                <p>Você acompanha cada passo do seu processo de forma clara, sem termos técnicos complicados.</p>
-            </div>
-            <div class="feature-item">
-                <h4>🎯 Foco em Soluções</h4>
-                <p>Buscamos resolver o seu problema da forma mais rápida e menos desgastante possível.</p>
+    <!-- Autoridade / Sobre -->
+    <section id="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-img"></div>
+            <div class="sobre-texto">
+                <h2>Advocacia de Alta Performance e Resultado</h2>
+                <p>O <strong>Schvarz Advocacia</strong> nasceu para romper com o modelo arcaico do direito. Nós não apenas movemos processos, nós construímos estratégias para resolver o seu problema no menor tempo possível.</p>
+                <p>Com um atendimento moderno, transparente e sem "juridiquês", mantemos você atualizado de cada passo. Atuamos de forma presencial em Foz do Iguaçu - PR e digitalmente em todo o território nacional.</p>
+                <br>
+                <a href="https://wa.me/5500000000000" class="btn-whats" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Conversar com Advogado Agora
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="bg-light">
+    <!-- FAQ -->
+    <section id="faq">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="accordion">
+            <div class="section-header">
+                <p>Tire suas dúvidas</p>
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="accordion" style="max-width: 800px; margin: 0 auto;">
                 <details>
-                    <summary>Como funciona o atendimento online?</summary>
-                    <p>É simples e seguro. Realizamos a sua consulta por videochamada (WhatsApp, Zoom ou Google Meet), analisamos seus documentos digitalmente e protocolamos sua ação sem que você precise sair de casa.</p>
+                    <summary>Como funciona a primeira consulta?</summary>
+                    <p>A primeira consulta é o momento onde faremos uma análise preliminar do seu caso. Ela pode ser feita via WhatsApp, chamada de vídeo ou presencialmente. Você expõe a situação, analisamos a viabilidade jurídica e propomos o plano de ação.</p>
                 </details>
                 <details>
-                    <summary>Qual o prazo para processar a empresa após demissão?</summary>
-                    <p>O trabalhador tem o prazo limite de até 2 anos após a data da demissão para dar entrada em uma ação trabalhista, podendo cobrar os direitos dos últimos 5 anos.</p>
+                    <summary>Qual o prazo para dar entrada em um processo trabalhista?</summary>
+                    <p>Você tem até 2 anos contados a partir da data do seu desligamento para ingressar com a ação, podendo cobrar direitos referentes aos últimos 5 anos de trabalho.</p>
                 </details>
                 <details>
-                    <summary>Quanto tempo demora um processo de divórcio?</summary>
-                    <p>Depende de cada caso. Divórcios consensuais (amigáveis) em cartório podem ser finalizados em poucos dias. Já os litigiosos podem levar meses. Nossa equipe sempre busca a via mais rápida.</p>
+                    <summary>Moro em outro estado, posso contratar o escritório?</summary>
+                    <p>Sim! Com os processos eletrônicos 100% digitais, nosso escritório tem capacidade técnica e estrutural para atender clientes de qualquer lugar do Brasil com a mesma eficiência do atendimento presencial.</p>
                 </details>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="cta-section text-center">
-        <div class="container">
-            <h2>Não deixe o seu problema jurídico aumentar. Fale conosco hoje mesmo.</h2>
-            <p>Clique no botão abaixo para relatar o seu caso diretamente a um advogado especialista.</p>
-            <a href="https://wa.me/5500000000000" class="btn-primary" target="_blank">Iniciar Atendimento via WhatsApp</a>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <p><strong>SCHVARZ ADVOCACIA</strong> | © 2026 Advocacia e Soluções. Todos os direitos reservados.</p>
-            <p><small>OAB/PR Nº XXX.XXX | <a href="#">Termos de Uso e Política de Privacidade</a></small></p>
+        <div class="container">
+            <h3>SCHVARZ ADVOCACIA</h3>
+            <p class="footer-info">Atendimento em Foz do Iguaçu/PR e Online para todo o Brasil.</p>
+            <p><small>© 2026 Todos os direitos reservados | OAB/PR Nº XXX.XXX</small></p>
         </div>
     </footer>
 
