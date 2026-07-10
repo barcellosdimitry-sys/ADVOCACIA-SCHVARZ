@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schvarz Advocacia e Soluções</title>
+    <title>Schvarz Advocacia & Consultoria Jurídica</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Fontes Google: Montserrat (Logo/Moderno), Playfair (Títulos) e Inter (Textos) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Ícones FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -33,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, .logo {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
         }
 
@@ -43,7 +45,7 @@
             padding: 0 20px;
         }
 
-        /* CABEÇALHO */
+        /* CABEÇALHO E LOGO MODERNA */
         header {
             background-color: var(--primary-dark);
             padding: 15px 0;
@@ -61,11 +63,23 @@
         }
 
         .logo {
-            color: var(--gold);
-            font-size: 1.8rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+            font-size: 1.4rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            color: var(--gold);
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
         }
 
         .nav-bar nav a {
@@ -74,6 +88,7 @@
             margin: 0 15px;
             font-size: 0.95rem;
             transition: color 0.3s;
+            font-family: 'Inter', sans-serif;
         }
 
         .nav-bar nav a:hover {
@@ -117,6 +132,7 @@
             font-size: 1.1rem;
             display: inline-block;
             transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .btn-gold:hover {
@@ -124,7 +140,7 @@
             transform: scale(1.02);
         }
 
-        /* HERO SECTION (IMAGEM CORRIGIDA DA ESTÁTUA DA JUSTIÇA) */
+        /* HERO SECTION (IMAGEM DA JUSTIÇA) */
         #hero {
             height: 100vh;
             min-height: 600px;
@@ -178,8 +194,8 @@
         }
 
         .trust-item p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             text-transform: uppercase;
             font-size: 0.85rem;
         }
@@ -205,6 +221,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .cards {
@@ -241,7 +258,7 @@
             margin-bottom: 15px;
         }
 
-        /* AUTORIDADE / SOBRE NÓS */
+        /* AUTORIDADE / SOBRE NÓS (IMAGEM FEMININA) */
         #sobre {
             padding: 100px 0;
             background-color: var(--white);
@@ -259,7 +276,8 @@
         .sobre-img {
             width: 100%;
             height: 500px;
-            background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop') center/cover;
+            /* Nova imagem: Advogada/Profissional feminina */
+            background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop') center/cover;
             border-radius: 10px;
             box-shadow: -20px 20px 0px var(--gold);
         }
@@ -299,6 +317,7 @@
             font-weight: 600;
             font-size: 1.1rem;
             outline: none;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .accordion p {
@@ -317,6 +336,7 @@
         footer h3 {
             color: var(--gold);
             margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         footer .footer-info {
@@ -335,9 +355,14 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="container nav-bar">
-            <div class="logo">SCHVARZ</div>
+            <!-- Logo atualizada com tipografia moderna -->
+            <div class="logo">
+                SCHVARZ
+                <span>Advocacia & Consultoria Jurídica</span>
+            </div>
             <nav>
                 <a href="#areas">Áreas de Atuação</a>
                 <a href="#sobre">O Escritório</a>
@@ -349,16 +374,18 @@
         </div>
     </header>
 
+    <!-- Hero Section (Com o texto da Alternativa B) -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Seus direitos protegidos com <span>Estratégia e Agilidade.</span></h1>
-                <p>Atuação incisiva em Direito Civil, Trabalhista e de Família. Análise de risco rigorosa para entregar o melhor resultado para o seu caso.</p>
+                <h1>Respostas rápidas para <span>problemas complexos.</span></h1>
+                <p>Construímos caminhos jurídicos inteligentes para que você recupere a sua tranquilidade.</p>
                 <a href="https://wa.me/INSIRA_O_NUMERO_AQUI_COM_DDD" class="btn-gold" target="_blank">Solicitar Análise do Meu Caso</a>
             </div>
         </div>
     </section>
 
+    <!-- Trust Bar (Prova Social) -->
     <section class="trust-bar">
         <div class="container trust-grid">
             <div class="trust-item">
@@ -376,6 +403,7 @@
         </div>
     </section>
 
+    <!-- Áreas de Atuação -->
     <section id="areas">
         <div class="container">
             <div class="section-header">
@@ -402,21 +430,23 @@
         </div>
     </section>
 
+    <!-- Autoridade / Sobre -->
     <section id="sobre">
         <div class="container sobre-grid">
             <div class="sobre-img"></div>
             <div class="sobre-texto">
                 <h2>Advocacia de Alta Performance e Resultado</h2>
-                <p>O <strong>Schvarz Advocacia</strong> nasceu para romper com o modelo arcaico do direito. Nós não apenas movemos processos, nós construímos estratégias para resolver o seu problema no menor tempo possível.</p>
+                <p>O <strong>Schvarz Advocacia & Consultoria Jurídica</strong> nasceu para romper com o modelo arcaico do direito. Nós não apenas movemos processos, nós construímos estratégias para resolver o seu problema no menor tempo possível.</p>
                 <p>Com um atendimento moderno, transparente e sem "juridiquês", mantemos você atualizado de cada passo. Atuamos de forma presencial em Foz do Iguaçu - PR e digitalmente em todo o território nacional.</p>
                 <br>
                 <a href="https://wa.me/INSIRA_O_NUMERO_AQUI_COM_DDD" class="btn-whats" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Conversar com Advogado Agora
+                    <i class="fab fa-whatsapp"></i> Conversar com a Advogada
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -440,9 +470,10 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <h3>SCHVARZ ADVOCACIA</h3>
+            <h3>SCHVARZ ADVOCACIA & CONSULTORIA JURÍDICA</h3>
             <p class="footer-info">Atendimento em Foz do Iguaçu/PR e Online para todo o Brasil.</p>
             <p><small>© 2026 Todos os direitos reservados | OAB/PR Nº XXX.XXX</small></p>
         </div>
