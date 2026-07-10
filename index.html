@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schvarz Advocacia & Consultoria Jurídica</title>
+    <title>Roseli Schvarz - Advogada</title>
     
     <!-- Fontes Google: Montserrat (Logo/Moderno), Playfair (Títulos) e Inter (Textos) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
 
         .logo span {
             color: var(--gold);
-            font-size: 0.55rem;
+            font-size: 0.65rem;
             font-weight: 600;
             letter-spacing: 1.5px;
             margin-top: 3px;
@@ -140,14 +140,15 @@
             transform: scale(1.02);
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION (Atualizado com deusa.jpg) */
         #hero {
             height: 100vh;
             min-height: 600px;
             display: flex;
             align-items: center;
-            background: linear-gradient(to right, rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.7)), 
-                        url('https://images.unsplash.com/photo-1605664393859-18464956d8a0?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            /* Mantém um gradiente escuro por cima da imagem para garantir a leitura do texto branco */
+            background: linear-gradient(to right, rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.6)), 
+                        url('deusa.jpg') center/cover no-repeat;
             color: var(--white);
             padding-top: 60px;
         }
@@ -273,7 +274,6 @@
             align-items: center;
         }
 
-        /* Imagem local configurada com nome limpo */
         .sobre-img {
             width: 100%;
             height: 500px;
@@ -325,28 +325,63 @@
             color: #b0b8c9;
         }
 
-        /* FOOTER */
+        /* FOOTER E QR CODE */
         footer {
             background-color: #050a17;
             color: #888;
             padding: 50px 0 20px 0;
             text-align: center;
         }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
 
         footer h3 {
             color: var(--gold);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
         }
 
         footer .footer-info {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
+            font-size: 1rem;
         }
         
         .footer-address {
+            font-size: 0.95rem;
+            color: #b0b8c9;
+        }
+
+        .qr-container {
+            margin-top: 10px;
+        }
+
+        .qr-container img {
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            border: 3px solid var(--gold);
+            transition: transform 0.3s;
+            object-fit: cover;
+        }
+
+        .qr-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .qr-text {
+            color: var(--gold);
             font-size: 0.9rem;
-            margin-bottom: 30px;
-            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         /* RESPONSIVO */
@@ -365,8 +400,8 @@
     <header>
         <div class="container nav-bar">
             <div class="logo">
-                SCHVARZ
-                <span>Advocacia & Consultoria Jurídica</span>
+                ROSELI SCHVARZ
+                <span>Advogada</span>
             </div>
             <nav>
                 <a href="#areas">Áreas de Atuação</a>
@@ -374,12 +409,12 @@
                 <a href="#faq">Dúvidas</a>
             </nav>
             <a href="https://wa.me/5547996039690" target="_blank" class="btn-whats">
-                <i class="fab fa-whatsapp"></i> Falar com Advogada Agora
+                <i class="fab fa-whatsapp"></i> Falar com Advogada
             </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Com imagem deusa.jpg) -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
@@ -441,7 +476,7 @@
             <div class="sobre-img"></div>
             <div class="sobre-texto">
                 <h2>Advocacia de Alta Performance e Resultado</h2>
-                <p>O <strong>Schvarz Advocacia & Consultoria Jurídica</strong> nasceu para romper com o modelo arcaico do direito. Nós não apenas movemos processos, nós construímos estratégias para resolver o seu problem no menor tempo possível.</p>
+                <p>O escritório <strong>Roseli Schvarz Advogada</strong> nasceu para romper com o modelo arcaico do direito. Nós não apenas movemos processos, nós construímos estratégias para resolver o seu problema no menor tempo possível.</p>
                 <p>Com um atendimento moderno, transparente e sem "juridiquês", mantemos você atualizado de cada passo. Atuamos de forma presencial em <strong>Itapema/SC</strong> e digitalmente em todo o território nacional.</p>
                 <br>
                 <a href="https://wa.me/5547996039690" class="btn-whats" target="_blank">
@@ -478,11 +513,24 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <h3>SCHVARZ ADVOCACIA & CONSULTORIA JURÍDICA</h3>
-            <p class="footer-info">Atendimento presencial em Itapema/SC e Online para todo o Brasil.</p>
-            <p class="footer-address">
-                <i class="fas fa-map-marker-alt"></i> Rua 318, 202 - Meia Praia, Itapema/SC - CEP: 88220-000
-            </p>
+            <div class="footer-content">
+                <div class="footer-text-area">
+                    <h3>ROSELI SCHVARZ ADVOGADA</h3>
+                    <p class="footer-info">Atendimento presencial em Itapema/SC e Online para todo o Brasil.</p>
+                    <p class="footer-address">
+                        <i class="fas fa-map-marker-alt"></i> Rua 318, 202 - Meia Praia, Itapema/SC - CEP: 88220-000
+                    </p>
+                </div>
+                
+                <!-- Sessão do QR Code -->
+                <div class="qr-container">
+                    <a href="https://instagram.com/SEU_INSTAGRAM_AQUI" target="_blank" title="Siga no Instagram">
+                        <img src="qrcode.jpg" alt="QR Code do Instagram da Advogada">
+                    </a>
+                    <p class="qr-text"><i class="fab fa-instagram"></i> Escaneie ou clique para seguir no Instagram</p>
+                </div>
+            </div>
+
             <p><small>© 2026 Todos os direitos reservados | OAB/SC Nº 66311</small></p>
         </div>
     </footer>
