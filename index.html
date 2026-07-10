@@ -5,47 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roseli Schvarz - Advogada</title>
     
-    <!-- Fontes Google: Montserrat (Logo/Moderno), Playfair (Títulos) e Inter (Textos) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Ícones FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-dark: #0B132B; /* Azul profundo */
-            --primary-light: #1C2541;
-            --gold: #D4AF37; /* Dourado Advocacia */
-            --text-gray: #4A4A4A;
-            --white: #FFFFFF;
-            --bg-light: #F4F6F9;
+            --primary-dark: #0B132B; 
+            --primary-blue: #1C2541; /* Azul da seção */
+            --gold: #D4AF37; 
+            --text-white: #FFFFFF;
+            --text-light: #E0E0E0;
             --whatsapp: #25D366;
+            --instagram: #E1306C;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-gray);
+            color: var(--text-white);
             line-height: 1.6;
-            background-color: var(--bg-light);
+            background-color: var(--primary-dark);
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
-        .container {
-            max-width: 1150px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
 
-        /* CABEÇALHO E LOGO MODERNA */
+        /* HEADER */
         header {
             background-color: var(--primary-dark);
             padding: 15px 0;
@@ -53,19 +41,15 @@
             width: 100%;
             top: 0;
             z-index: 999;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
-        .nav-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .nav-bar { display: flex; justify-content: space-between; align-items: center; }
 
         .logo {
             font-family: 'Montserrat', sans-serif;
-            color: var(--white);
-            font-size: 1.4rem;
+            color: var(--text-white);
+            font-size: 1.2rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -74,465 +58,138 @@
             line-height: 1.1;
         }
 
-        .logo span {
-            color: var(--gold);
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            margin-top: 3px;
-        }
+        .logo span { color: var(--gold); font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px; margin-top: 3px; }
 
-        .nav-bar nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
+        .nav-actions { display: flex; align-items: center; gap: 20px; }
 
-        .nav-bar nav a:hover {
-            color: var(--gold);
-        }
+        .social-link { color: var(--text-white); font-size: 1.5rem; transition: color 0.3s; }
+        .social-link:hover { color: var(--instagram); }
 
-        /* BOTÃO WHATSAPP PULSANTE */
         .btn-whats {
             background-color: var(--whatsapp);
-            color: var(--white);
+            color: var(--text-white);
             text-decoration: none;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            animation: pulse 2s infinite;
         }
+        
+        .btn-whats:hover { background-color: #1EBE55; }
 
-        .btn-whats:hover {
-            background-color: #1EBE55;
-            transform: translateY(-2px);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .btn-gold {
-            background-color: var(--gold);
-            color: var(--primary-dark);
-            text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .btn-gold:hover {
-            background-color: #b5952f;
-            transform: scale(1.02);
-        }
-
-        /* HERO SECTION (Atualizado com deusa.jpg) */
+        /* HERO */
         #hero {
             height: 100vh;
-            min-height: 600px;
             display: flex;
             align-items: center;
-            /* Mantém um gradiente escuro por cima da imagem para garantir a leitura do texto branco */
             background: linear-gradient(to right, rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.6)), 
                         url('deusa.jpg') center/cover no-repeat;
-            color: var(--white);
-            padding-top: 60px;
         }
 
-        .hero-content {
-            max-width: 700px;
-        }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero-content h1 span { color: var(--gold); }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; color: var(--text-light); }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--white);
-        }
+        /* SEÇÕES AZUIS (Areas e Sobre) */
+        .blue-section { background-color: var(--primary-blue); padding: 100px 0; }
+        
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-header p { color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        .hero-content h1 span {
-            color: var(--gold);
-        }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 10px; text-align: center; border-bottom: 4px solid var(--gold); }
+        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #d1d5db;
-        }
-
-        /* SESSÃO DE CONFIANÇA (NÚMEROS) */
-        .trust-bar {
-            background-color: var(--gold);
-            padding: 40px 0;
-            color: var(--primary-dark);
-        }
-
-        .trust-grid {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .trust-item h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-
-        .trust-item p {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        /* ÁREAS DE ATUAÇÃO */
-        #areas {
-            padding: 100px 0;
-            background-color: var(--bg-light);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-        }
-
-        .section-header p {
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s;
-            border-bottom: 4px solid transparent;
-            text-align: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-bottom: 4px solid var(--gold);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .card i {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-
-        /* AUTORIDADE / SOBRE NÓS */
-        #sobre {
-            padding: 100px 0;
-            background-color: var(--white);
-            display: flex;
-            align-items: center;
-        }
-
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .sobre-img {
-            width: 100%;
-            height: 500px;
-            background: url('advogada.jpg') center/cover no-repeat;
-            border-radius: 10px;
-            box-shadow: -20px 20px 0px var(--gold);
-        }
-
-        .sobre-texto h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-
-        .sobre-texto p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
+        /* SOBRE */
+        .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+        .sobre-img { width: 100%; height: 500px; background: url('advogada.jpg') center/cover no-repeat; border-radius: 10px; box-shadow: -20px 20px 0px var(--gold); }
+        
+        .qr-container { display: flex; flex-direction: column; align-items: start; gap: 10px; margin-top: 30px; }
+        .qr-container img { width: 120px; border: 3px solid var(--gold); border-radius: 8px; }
 
         /* FAQ */
-        #faq {
-            padding: 80px 0;
-            background-color: var(--primary-dark);
-            color: var(--white);
-        }
+        #faq { padding: 80px 0; background-color: var(--primary-dark); }
+        .accordion details { background-color: rgba(255,255,255,0.05); padding: 20px; margin-bottom: 15px; border-radius: 8px; border-left: 4px solid var(--gold); }
+        .accordion summary { cursor: pointer; font-weight: 600; margin-bottom: 5px; }
 
-        #faq .section-header h2 {
-            color: var(--white);
-        }
-
-        .accordion details {
-            background-color: var(--primary-light);
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            border-left: 4px solid var(--gold);
-        }
-
-        .accordion summary {
-            font-weight: 600;
-            font-size: 1.1rem;
-            outline: none;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .accordion p {
-            margin-top: 15px;
-            color: #b0b8c9;
-        }
-
-        /* FOOTER E QR CODE */
-        footer {
-            background-color: #050a17;
-            color: #888;
-            padding: 50px 0 20px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        footer h3 {
-            color: var(--gold);
-            margin-bottom: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-        }
-
-        footer .footer-info {
-            margin-bottom: 5px;
-            font-size: 1rem;
-        }
-        
-        .footer-address {
-            font-size: 0.95rem;
-            color: #b0b8c9;
-        }
-
-        .qr-container {
-            margin-top: 10px;
-        }
-
-        .qr-container img {
-            width: 140px;
-            height: 140px;
-            border-radius: 8px;
-            border: 3px solid var(--gold);
-            transition: transform 0.3s;
-            object-fit: cover;
-        }
-
-        .qr-container img:hover {
-            transform: scale(1.05);
-        }
-
-        .qr-text {
-            color: var(--gold);
-            font-size: 0.9rem;
-            margin-top: 10px;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .nav-bar nav { display: none; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .sobre-grid { grid-template-columns: 1fr; }
-            .sobre-img { height: 350px; box-shadow: -10px 10px 0px var(--gold); }
-            #hero { text-align: center; padding-top: 100px; }
-        }
+        footer { background-color: #050a17; color: #888; padding: 40px 0; text-align: center; }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="container nav-bar">
             <div class="logo">
                 ROSELI SCHVARZ
                 <span>Advogada</span>
             </div>
-            <nav>
-                <a href="#areas">Áreas de Atuação</a>
-                <a href="#sobre">O Escritório</a>
-                <a href="#faq">Dúvidas</a>
-            </nav>
-            <a href="https://wa.me/5547996039690" target="_blank" class="btn-whats">
-                <i class="fab fa-whatsapp"></i> Falar com Advogada
-            </a>
+            <div class="nav-actions">
+                <a href="https://www.instagram.com/roselischvarz.advogada" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5547996039690" target="_blank" class="btn-whats">
+                    <i class="fab fa-whatsapp"></i> Falar com Advogada
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section (Com imagem deusa.jpg) -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Respostas rápidas para <span>problemas complexos.</span></h1>
                 <p>Construímos caminhos jurídicos inteligentes para que você recupere a sua tranquilidade.</p>
-                <a href="https://wa.me/5547996039690" class="btn-gold" target="_blank">Falar com Advogada Agora</a>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar (Prova Social) -->
-    <section class="trust-bar">
-        <div class="container trust-grid">
-            <div class="trust-item">
-                <h3>Atuando</h3>
-                <p>Desde 2020</p>
-            </div>
-            <div class="trust-item">
-                <h3>100%</h3>
-                <p>Dos prazos em dia</p>
-            </div>
-            <div class="trust-item">
-                <h3>Sigilo</h3>
-                <p>Absoluto e Ético</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Áreas de Atuação -->
-    <section id="areas">
+    <section id="areas" class="blue-section">
         <div class="container">
             <div class="section-header">
                 <p>Nossas Especialidades</p>
                 <h2>Soluções Jurídicas Sob Medida</h2>
             </div>
             <div class="cards">
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Família e Sucessões</h3>
-                    <p>Atuação humanizada e firme em divórcios, partilha de bens, guarda, pensão alimentícia e planejamento sucessório (inventários).</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Direito Trabalhista</h3>
-                    <p>Defesa dos direitos do trabalhador frente a abusos corporativos. Reversão de justa causa, rescisão indireta, assédio e cálculos de verbas.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-file-contract"></i>
-                    <h3>Civil e Contratos</h3>
-                    <p>Segurança para o seu patrimônio. Resolução de conflitos contratuais, ações indenizatórias, direito imobiliário e cobranças judiciais.</p>
-                </div>
+                <div class="card"><i class="fas fa-users"></i><h3>Família e Sucessões</h3><p>Atuação humanizada em divórcios, partilha e inventários.</p></div>
+                <div class="card"><i class="fas fa-briefcase"></i><h3>Direito Trabalhista</h3><p>Defesa dos direitos frente a abusos corporativos.</p></div>
+                <div class="card"><i class="fas fa-file-contract"></i><h3>Civil e Contratos</h3><p>Segurança para o seu patrimônio e contratos.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Autoridade / Sobre -->
-    <section id="sobre">
+    <section id="sobre" class="blue-section" style="background-color: var(--primary-dark);">
         <div class="container sobre-grid">
             <div class="sobre-img"></div>
             <div class="sobre-texto">
-                <h2>Advocacia de Alta Performance e Resultado</h2>
-                <p>O escritório <strong>Roseli Schvarz Advogada</strong> nasceu para romper com o modelo arcaico do direito. Nós não apenas movemos processos, nós construímos estratégias para resolver o seu problema no menor tempo possível.</p>
-                <p>Com um atendimento moderno, transparente e sem "juridiquês", mantemos você atualizado de cada passo. Atuamos de forma presencial em <strong>Itapema/SC</strong> e digitalmente em todo o território nacional.</p>
+                <h2>Advocacia de Alta Performance</h2>
+                <p>O escritório <strong>Roseli Schvarz Advogada</strong> nasceu para romper com o modelo arcaico do direito. Construímos estratégias inteligentes para resolver o seu problema com agilidade.</p>
                 <br>
-                <a href="https://wa.me/5547996039690" class="btn-whats" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Falar com Advogada Agora
-                </a>
+                <p>Atendimento presencial em Itapema/SC e digital para todo o Brasil.</p>
+                
+                <div class="qr-container">
+                    <p style="color: var(--gold); font-weight: 700;">Siga no Instagram:</p>
+                    <a href="https://www.instagram.com/roselischvarz.advogada" target="_blank">
+                        <img src="qrcode.jpg" alt="Instagram">
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq">
         <div class="container">
-            <div class="section-header">
-                <p>Tire suas dúvidas</p>
-                <h2>Perguntas Frequentes</h2>
-            </div>
+            <div class="section-header"><h2>Perguntas Frequentes</h2></div>
             <div class="accordion" style="max-width: 800px; margin: 0 auto;">
-                <details>
-                    <summary>Como funciona a primeira consulta?</summary>
-                    <p>A primeira consulta é o momento onde faremos uma análise preliminar do seu caso. Ela pode ser feita via WhatsApp, chamada de vídeo ou presencialmente. Você expõe a situação, analisamos a viabilidade jurídica e propomos o plano de ação.</p>
-                </details>
-                <details>
-                    <summary>Quanto tempo demora uma análise de contrato?</summary>
-                    <p>O prazo varia de acordo com a complexidade e a extensão do documento. Em média, entregamos a análise de contratos padrões em até 3 a 5 dias úteis, garantindo uma revisão minuciosa para proteger o seu patrimônio e evitar riscos ou brechas futuras.</p>
-                </details>
-                <details>
-                    <summary>Moro em outro estado, posso contratar o escritório?</summary>
-                    <p>Sim! Com os processos eletrônicos 100% digitais, nosso escritório tem capacidade técnica e estrutural para atender clientes de qualquer lugar do Brasil com a mesma eficiência e proximidade do atendimento presencial.</p>
-                </details>
+                <details><summary>Como funciona a primeira consulta?</summary><p>Análise preliminar via WhatsApp, vídeo ou presencial.</p></details>
+                <details><summary>Quanto tempo demora uma análise de contrato?</summary><p>Em média, de 3 a 5 dias úteis.</p></details>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text-area">
-                    <h3>ROSELI SCHVARZ ADVOGADA</h3>
-                    <p class="footer-info">Atendimento presencial em Itapema/SC e Online para todo o Brasil.</p>
-                    <p class="footer-address">
-                        <i class="fas fa-map-marker-alt"></i> Rua 318, 202 - Meia Praia, Itapema/SC - CEP: 88220-000
-                    </p>
-                </div>
-                
-                <!-- Sessão do QR Code -->
-                <div class="qr-container">
-                    <a href="https://instagram.com/SEU_INSTAGRAM_AQUI" target="_blank" title="Siga no Instagram">
-                        <img src="qrcode.jpg" alt="QR Code do Instagram da Advogada">
-                    </a>
-                    <p class="qr-text"><i class="fab fa-instagram"></i> Escaneie ou clique para seguir no Instagram</p>
-                </div>
-            </div>
-
-            <p><small>© 2026 Todos os direitos reservados | OAB/SC Nº 66311</small></p>
-        </div>
+        <p>© 2026 Roseli Schvarz Advogada | OAB/SC Nº 66311</p>
     </footer>
 
 </body>
